@@ -9,6 +9,7 @@ class DBOfflineEpisodeBloc {
   Map<String, DownloadTask> _taskPool;
 
   init() async {
+    await FlutterDownloader.initialize();
     final tasks = await FlutterDownloader.loadTasks();
     _taskPool = {for (var task in tasks) task.taskId: task};
     _getAll();

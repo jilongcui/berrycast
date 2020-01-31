@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:fluttery/gestures.dart';
+import 'package:fluttery_dart2/gestures.dart';
 import 'package:provider/provider.dart';
 
 import 'audio.dart';

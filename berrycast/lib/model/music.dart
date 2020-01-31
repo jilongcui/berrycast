@@ -41,5 +41,5 @@ class Music implements Song {
               ),
         artist = song.artist,
         albumTitle = song.album,
-        trackId = song.trackId;
+        trackId = song.id;
 }

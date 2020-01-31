@@ -20,7 +20,7 @@ class MusicProvider with ChangeNotifier {
   init() async {
     if (_musics.length == 0) {
       await Future.delayed(Duration(milliseconds: 500));
-      await updateAllSongs();
+      //await updateAllSongs();
       await Future.delayed(Duration(milliseconds: 500));
       _inited = true;
       notifyListeners();

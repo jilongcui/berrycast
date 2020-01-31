@@ -31,7 +31,9 @@ dependencies:
 #    path:
 #      /home/magodo/github/audioplayers
 
-  fluttery: ^0.0.8
+  fluttery_dart2:
+    git:
+      url: https://github.com/mclark4386/fluttery.git
   provider: ^3.0.0+1
   rxdart: ^0.22.1
   sticky_headers: ^0.1.8
@@ -41,7 +43,7 @@ dependencies:
       url: https://github.com/witochandra/webfeed.git
   http: ^0.12.0+2
   intl: ^0.15.8
-  cached_network_image: ^1.1.1
+  cached_network_image: ^2.0.0
   sqflite: ^1.1.6
   path: ^1.6.2
   path_provider: ^1.2.0
@@ -55,10 +57,10 @@ dependencies:
   flutter_html: ^0.11.0
   url_launcher: ^5.2.0
 
-
   flute_music_player:
-    git:
-      url: https://github.com/magodo/Flute-Music-Player.git
+#  flute_music_player:
+#    git:
+#      url: https://github.com/magodo/Flute-Music-Player.git
 
 dev_dependencies:
   flutter_test:

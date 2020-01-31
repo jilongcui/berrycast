@@ -23,18 +23,25 @@ class _MyAppState extends State<MyApp> {
   final AudioSchedule schedule = AudioSchedule();
 
   @override
-  void initState() {
+  Future<void> initState() {
     super.initState();
     dbOfflineEpisodeBloc.init();
-    FlutterDownloader.registerCallback(
-        (String id, DownloadTaskStatus status, int progress) async {
-      // workaround when a task is just started but no byte is downloaded, then this task is paused.
-      // The flutter_downloader will return progress as -1 in this case.
-      if (progress < 0) {
-        progress = 0;
-      }
-      dbOfflineEpisodeBloc.upgradeTaskStatus(id, status, progress);
-    });
+    WidgetsFlutterBinding.ensureInitialized();
+    _init();
+
+  }
+
+  Future<void> _init() async {
+    await FlutterDownloader.initialize();
+//    FlutterDownloader.registerCallback(
+//            (String id, DownloadTaskStatus status, int progress) async {
+//      // workaround when a task is just started but no byte is downloaded, then this task is paused.
+//      // The flutter_downloader will return progress as -1 in this case.
+//      if (progress < 0) {
+//        progress = 0;
+//      }
+//      dbOfflineEpisodeBloc.upgradeTaskStatus(id, status, progress);
+//    });
   }
 
   @override
